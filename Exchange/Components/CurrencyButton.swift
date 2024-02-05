@@ -14,6 +14,7 @@ enum ButtonLayout {
 
 struct CurrencyButton: View {
     var layout: ButtonLayout
+    var action: () -> Void
     
     var body: some View {
         switch layout {
@@ -21,27 +22,20 @@ struct CurrencyButton: View {
             // Expanded Button
             VStack {
                 Button {
-                    print("Something should happen")
+                    action()
                 } label: {
                     Image(systemName: "plus")
                         .modifier(CurrencyButtonModifier())
                 }
                 
-                
                 Text("Add Currency Pair")
                     .font(.headline)
                     .foregroundStyle(Color(uiColor: .systemBlue))
-                
-                Text("Choose a currency pair to compare their \nlive rates")
-                    .font(.subheadline)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(Color(uiColor: .systemGray))
-                
             }
         case .compact:
             // Compact Button
             Button {
-                print("Something should happen")
+                action()
             } label: {
                 HStack(spacing: 20) {
                     Image(systemName: "plus")
@@ -60,5 +54,5 @@ struct CurrencyButton: View {
 }
 
 #Preview {
-    CurrencyButton(layout: .compact)
+    CurrencyButton(layout: .compact, action: { })
 }

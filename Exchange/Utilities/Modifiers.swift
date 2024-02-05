@@ -10,9 +10,8 @@ import SwiftUI
 struct CurrencyButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.title)
-            .fontWeight(.semibold)
-            .frame(width: 60, height: 60)
+            .font(.headline)
+            .frame(width: 40, height: 40)
             .foregroundStyle(.white)
             .background(Color(uiColor: .systemBlue))
             .clipShape(Circle())
