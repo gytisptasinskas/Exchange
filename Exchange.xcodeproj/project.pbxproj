@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		48B80F0F2B70D7D600041FC8 /* ExchangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B80F0E2B70D7D600041FC8 /* ExchangeApp.swift */; };
-		48B80F112B70D7D600041FC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B80F102B70D7D600041FC8 /* ContentView.swift */; };
 		48B80F132B70D7DA00041FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B80F122B70D7DA00041FC8 /* Assets.xcassets */; };
 		48B80F162B70D7DA00041FC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B80F152B70D7DA00041FC8 /* Preview Assets.xcassets */; };
 		48B80F202B70D7DB00041FC8 /* ExchangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B80F1F2B70D7DB00041FC8 /* ExchangeTests.swift */; };
 		48B80F2A2B70D7DB00041FC8 /* ExchangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B80F292B70D7DB00041FC8 /* ExchangeUITests.swift */; };
 		48B80F2C2B70D7DB00041FC8 /* ExchangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B80F2B2B70D7DB00041FC8 /* ExchangeUITestsLaunchTests.swift */; };
+		48B80F422B70D8B700041FC8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B80F412B70D8B700041FC8 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		48B80F0B2B70D7D600041FC8 /* Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B80F0E2B70D7D600041FC8 /* ExchangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeApp.swift; sourceTree = "<group>"; };
-		48B80F102B70D7D600041FC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48B80F122B70D7DA00041FC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48B80F152B70D7DA00041FC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		48B80F1B2B70D7DB00041FC8 /* ExchangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +43,7 @@
 		48B80F252B70D7DB00041FC8 /* ExchangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B80F292B70D7DB00041FC8 /* ExchangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeUITests.swift; sourceTree = "<group>"; };
 		48B80F2B2B70D7DB00041FC8 /* ExchangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48B80F412B70D8B700041FC8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +94,11 @@
 		48B80F0D2B70D7D600041FC8 /* Exchange */ = {
 			isa = PBXGroup;
 			children = (
-				48B80F0E2B70D7D600041FC8 /* ExchangeApp.swift */,
-				48B80F102B70D7D600041FC8 /* ContentView.swift */,
+				48B80F392B70D81900041FC8 /* App */,
+				48B80F3D2B70D83600041FC8 /* Components */,
+				48B80F382B70D81400041FC8 /* Core */,
+				48B80F3C2B70D82F00041FC8 /* Service */,
+				48B80F3B2B70D82B00041FC8 /* Model */,
 				48B80F122B70D7DA00041FC8 /* Assets.xcassets */,
 				48B80F142B70D7DA00041FC8 /* Preview Content */,
 			);
@@ -125,6 +128,67 @@
 				48B80F2B2B70D7DB00041FC8 /* ExchangeUITestsLaunchTests.swift */,
 			);
 			path = ExchangeUITests;
+			sourceTree = "<group>";
+		};
+		48B80F382B70D81400041FC8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				48B80F3E2B70D85A00041FC8 /* Home */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		48B80F392B70D81900041FC8 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				48B80F0E2B70D7D600041FC8 /* ExchangeApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		48B80F3B2B70D82B00041FC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48B80F3C2B70D82F00041FC8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		48B80F3D2B70D83600041FC8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		48B80F3E2B70D85A00041FC8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				48B80F402B70D86800041FC8 /* ViewModel */,
+				48B80F3F2B70D86300041FC8 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		48B80F3F2B70D86300041FC8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				48B80F412B70D8B700041FC8 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		48B80F402B70D86800041FC8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48B80F112B70D7D600041FC8 /* ContentView.swift in Sources */,
+				48B80F422B70D8B700041FC8 /* HomeView.swift in Sources */,
 				48B80F0F2B70D7D600041FC8 /* ExchangeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +486,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Exchange/Preview Content\"";
+				DEVELOPMENT_TEAM = G5BSGM35FT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -450,6 +515,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Exchange/Preview Content\"";
+				DEVELOPMENT_TEAM = G5BSGM35FT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
