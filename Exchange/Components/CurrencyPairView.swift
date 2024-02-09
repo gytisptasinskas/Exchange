@@ -10,6 +10,7 @@ import SwiftUI
 struct CurrencyPairView: View {
     var fromCurrency: Currency
     var toCurrency: Currency
+    var exchangeRate: Double?
     
     var body: some View {
         VStack(spacing: 10) {
@@ -18,9 +19,15 @@ struct CurrencyPairView: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                 Spacer()
-                Text("75.7903")
-                    .font(.title2)
-                    .fontWeight(.semibold)
+                if let rate = exchangeRate {
+                    Text("\(rate, specifier: "%.4f")")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                } else {
+                    Text("Fetching...")
+                        .font(.title2)
+                        .fontWeight(.semibold)
+                }
             }
             
             HStack {
