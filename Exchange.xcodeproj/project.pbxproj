@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		481897692B7256060025C5EA /* CurrencyRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481897682B7256060025C5EA /* CurrencyRate.swift */; };
 		48B80F0F2B70D7D600041FC8 /* ExchangeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B80F0E2B70D7D600041FC8 /* ExchangeApp.swift */; };
 		48B80F132B70D7DA00041FC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B80F122B70D7DA00041FC8 /* Assets.xcassets */; };
 		48B80F162B70D7DA00041FC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48B80F152B70D7DA00041FC8 /* Preview Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		481897682B7256060025C5EA /* CurrencyRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyRate.swift; sourceTree = "<group>"; };
 		48B80F0B2B70D7D600041FC8 /* Exchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Exchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B80F0E2B70D7D600041FC8 /* ExchangeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeApp.swift; sourceTree = "<group>"; };
 		48B80F122B70D7DA00041FC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 		48B80F3C2B70D82F00041FC8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				481897682B7256060025C5EA /* CurrencyRate.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -304,7 +307,7 @@
 		48B80F032B70D7D600041FC8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
@@ -377,6 +380,7 @@
 				48B80F422B70D8B700041FC8 /* HomeView.swift in Sources */,
 				48B80F682B71252400041FC8 /* CurrencyPair.swift in Sources */,
 				48B80F6C2B712ABF00041FC8 /* CurrencyPairView.swift in Sources */,
+				481897692B7256060025C5EA /* CurrencyRate.swift in Sources */,
 				48B80F532B70FC4100041FC8 /* CurrencyListView.swift in Sources */,
 				48B80F662B710DAF00041FC8 /* Image.swift in Sources */,
 				48B80F442B70DFB600041FC8 /* HomeViewModel.swift in Sources */,

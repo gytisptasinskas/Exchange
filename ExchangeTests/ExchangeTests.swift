@@ -8,29 +8,45 @@
 import XCTest
 @testable import Exchange
 
+@MainActor
 final class ExchangeTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let viewModel = HomeViewModel()
+    
+    func testLoadCurrencies() {
+        viewModel.loadCurrencies()
+        
+        XCTAssertFalse(viewModel.currencies.isEmpty, "Currencies should be loaded")
+    }
+    
+    func testFilterCurrencies() {
+        viewModel.currencies = [Currency(code: "EUR", name: "Euro", country: "", countryCode: "", flag: ""),
+                                Currency(code: "USD", name: "US Dollar", country: "", countryCode: "", flag: "")]
+        
+        viewModel.filterCurrencies(searchQuery: "Euro")
+        
+        XCTAssertEqual(viewModel.filteredCurrencies.count, 1)
+        XCTAssertEqual(viewModel.filteredCurrencies.first?.code, "EUR")
+        XCTAssertNotEqual(viewModel.filteredCurrencies.first?.code, "USD")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testSelectionSteps() {
+        viewModel.proceedToNextSelectionStep()
+        XCTAssertEqual(viewModel.selectionStep, .selectingToCurrency, "Should proceed to selecting to currency")
+        
+        viewModel.resetForNewSelection()
+        XCTAssertEqual(viewModel.selectionStep, .selectingFromCurrency, "Should reset to selecting from currency")
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testAddingDuplicateCurrencyPairs() throws {
+        let baseCurrency = Currency(code: "EUR", name: "Euro", country: "", countryCode: "", flag: "")
+        let targetCurrency = Currency(code: "USD", name: "US Dollar", country: "", countryCode: "", flag: "")
+        
+        viewModel.addCurrencyPair(from: baseCurrency, to: targetCurrency)
+        XCTAssertEqual(viewModel.currencyPairs.count, 1, "One currency pair should be added.")
+        
+        viewModel.addCurrencyPair(from: baseCurrency, to: targetCurrency)
+        
+        XCTAssertEqual(viewModel.currencyPairs.count, 1, "Duplicate currency pair should not be added.")
+        XCTAssertNotNil(viewModel.errorMessage, "An error message should be set when trying to add a duplicate pair.")
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
